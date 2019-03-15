@@ -3,15 +3,17 @@
 	padding: 0;
 }
 
-html {
+html, body {
 	font-family: 'Space Mono', monospace;
+	font-size: 20px;
 }
 
 .container {
-	width: 50%;
+	box-sizing: content-box;
+	width: 45%;
 	margin: 0 auto;
 	position: relative;
-	top: 25vh;
+	top: 15vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,6 +30,7 @@ h1 {
 }
 
 input {
+	box-sizing: border-box;
 	width: 100%;
 	padding: 5px 4px;
 	margin-bottom: 10px;
@@ -44,8 +47,31 @@ input {
 }
 
 ul {
+	box-sizing: border-box;
 	width: 100%;
 	list-style-type: none;
+	border-top: 1.5px solid black;
+	border-left: 1.5px solid black;
+}
+
+li {
+	padding: 5px 4px;
+	border-bottom: 1.5px solid black;
+	border-right: 1.5px solid black;
+}
+
+li:hover {
+	text-decoration-line: line-through;
+	text-decoration-color: red;
+	text-decoration-style: solid;
+
+	-moz-text-decoration-line: line-through;
+	-moz-text-decoration-color: red;
+	-moz-text-decoration-style: solid;
+
+	-webkit-text-decoration-line: line-through;
+	-webkit-text-decoration-color: red;
+	-webkit-text-decoration-style: solid;
 }
 
 /**Footer**/
