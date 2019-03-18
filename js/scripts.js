@@ -1,25 +1,22 @@
 let newTask = document.querySelector('input');
 let list = document.querySelector('ul');
-let	taskValue = newTask.value;
 
 
 function addTask(event) {
-	let listItem, listItemText;
+	let newItem;
 	if (event.keyCode === 13) {
-		if (newTask.value === "") {
+		if (newTask.value == "") {
 			return;
 		}
-		console.log('added');
-		listItem = document.createElement('li'); //create new li
-		listItemText = document.createTextNode(taskValue); //create new text node from input
-		listItem.appendChild(listItemText); //append user's input value to li
-		list.appendChild(listItem); //append new li to the ul
-		taskValue = "";
+		newItem = document.createElement('li'); //create new li
+		newItem.innerText = newTask.value; 
+		list.insertBefore(newItem, list.childNodes[0]); //append user's input value to li
+		newTask.value = ''; //clear input content
 	}
 };
 
-newTask.addEventListener('keyup', addTask);
 
+newTask.addEventListener('keyup', addTask, false);
 
 
 /*
