@@ -1,37 +1,57 @@
 let newTask = document.querySelector('input');
-let list = document.querySelector('ul');
 
-
-function addTask(event) {
-	let newItem;
-	if (event.keyCode === 13) {
-		if (newTask.value == "") {
-			return;
+//Event Listeners
+newTask.addEventListener('keyup', function(event){
+	if (event.keyCode === 13) { //key code 13 is Enter/Return
+		let value = newTask.value;
+		if (value) { 
+			addTask();
+			newTask.value = ''; //clear input content
 		}
-		newItem = document.createElement('li'); //create new li
-		newItem.innerText = newTask.value; 
-		list.insertBefore(newItem, list.childNodes[0]); //append user's input value to li
-		newTask.value = ''; //clear input content
 	}
-};
+});
+
+//Adding a new item to the todo list
+function addTask() {
+	let list = document.getElementById('todo');
+
+	let newItem = document.createElement('li'); //create new li
+	newItem.innerText = newTask.value; 
+	newItem.addEventListener('click', completeTask); //Add click event for completing task
+
+	let button = document.createElement('a');
+	button.classList.add('btn');
+	button.href = '#';
+	button.addEventListener('click', deleteTask); //Add click event for removing item
+
+	let icon = document.createElement('i');
+	icon.classList.add('fas', 'fa-times');
+
+	button.appendChild(icon);
+	newItem.appendChild(button);
+	list.insertBefore(newItem, list.childNodes[0]); //insert new list item to beginning of list
+}
+
+//Delete a task from the todo list
+function deleteTask() {
+	var item = this.parentNode;
+	var list = item.parentNode;
+
+	list.removeChild(item); 
+}
 
 
-newTask.addEventListener('keyup', addTask, false);
+function completeTask() {
+	var item = this;
+	item.classList.add('strike');
+}
 
 
 /*
-function deleteTask {
+function clearCompleteTasks(event) {
 
 }
 
-function completeTask {
-
-}
-
-function clearCompleteTasks {
-
-}
-
-function clearAllTasks {
+function clearAllTasks(event) {
 
 }*/
