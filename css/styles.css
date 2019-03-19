@@ -13,14 +13,21 @@ html, body {
 	justify-content: center;
 	flex-direction: column;
 	position: relative;
-	top: 15vh;
+	top: 22vh;
 	box-sizing: content-box;
 	width: 45%;
 	margin: 0 auto;
 }
 
+h6 {
+	padding-left: 22px;
+	margin-bottom: -11px;
+}
+
 h1 {
 	text-align: left;
+	line-height: .8;
+	padding-bottom: 10px;
 }
 
 input {
@@ -43,9 +50,11 @@ input {
 ul {
 	box-sizing: border-box;
 	width: 100%;
-	border-top: 1.5px solid black;
-	border-left: 1.5px solid black;
 	list-style-type: none;
+}
+
+ul li:first-child {
+	border-top: 1.5px solid black;
 }
 
 li {
@@ -53,8 +62,9 @@ li {
 	justify-content: space-between;
 	align-items: center;
 	padding: 5px 4px;
-	border-bottom: 1.5px solid black;
 	border-right: 1.5px solid black;
+	border-bottom: 1.5px solid black;
+	border-left: 1.5px solid black;
 }
 
 a {

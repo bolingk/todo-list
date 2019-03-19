@@ -17,12 +17,12 @@ function addTask() {
 
 	let newItem = document.createElement('li'); //create new li
 	newItem.innerText = newTask.value; 
-	newItem.addEventListener('click', completeTask); //Add click event for completing task
+	newItem.addEventListener('click', completeTask); //Add click event for completing the task
 
 	let button = document.createElement('a');
 	button.classList.add('btn');
 	button.href = '#';
-	button.addEventListener('click', deleteTask); //Add click event for removing item
+	button.addEventListener('click', deleteTask); //Add click event for removing the item
 
 	let icon = document.createElement('i');
 	icon.classList.add('fas', 'fa-times');
