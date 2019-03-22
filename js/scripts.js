@@ -58,8 +58,8 @@ function completeTask() {
 	let item = this.parentNode.parentNode;
 	let icon = this.firstChild;
 
-	item.classList.add('strike');
-	icon.classList.add('complete');
+	item.classList.toggle('strike');
+	icon.classList.toggle('complete');
 }
 
 
