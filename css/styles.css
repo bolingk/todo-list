@@ -67,8 +67,13 @@ li {
 	border-left: 1.5px solid black;
 }
 
+.buttons {
+	margin-right: 5px;
+}
+
 a {
-	margin-right: 10px;
+	margin-left: 6px;
+	margin-right: 6px;
 	color: #d5d8dc;
 }
 
@@ -77,7 +82,11 @@ a:hover {
 	cursor: pointer;
 }
 
-li:hover, .strike {
+.complete {
+	color: red;
+}
+
+.strike {
 	-moz-text-decoration-line: line-through;
 	-moz-text-decoration-color: red;
 	-moz-text-decoration-style: solid;
